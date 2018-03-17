@@ -2,6 +2,14 @@ package codekamp;
 
 public class Animal {
 
+    public Animal() {
+        System.out.println("Animal Class kaa Constructor");
+    }
+
+    public Animal(int a) {
+        System.out.println("Animal Class kaa Constructor");
+    }
+
     public void talk() {
         System.out.println("animal talking");
     }

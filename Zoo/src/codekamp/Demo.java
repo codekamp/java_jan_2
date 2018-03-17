@@ -1,6 +1,5 @@
 package codekamp;
 
-import javax.sound.midi.Soundbank;
 import java.util.Random;
 
 public class Demo {
@@ -9,19 +8,27 @@ public class Demo {
 
     public static void main(String[] a) {
 
-        Random r = new Random();
-        int randomInt = r.nextInt(4);
+        Dog d1 = new Dog();
+
+        Cat c1 = new Cat();
+
+//        Random r = new Random();
+//        int randomInt = r.nextInt(4);
+//
+//
+//        if (randomInt == 0) {
+//            Demo.a1 = new Dog();
+//        } else if(randomInt == 1) {
+//            Demo.a1 = new Cat();
+//        } else if(randomInt == 2) {
+//            Demo.a1 = new Elephant();
+//        } else {
+//            Demo.a1 = new Lion();
+//        }
+//
+//        System.out.println(Demo.a1);
 
 
-        if (randomInt == 0) {
-            Demo.a1 = new Dog();
-        } else if(randomInt == 1) {
-            Demo.a1 = new Cat();
-        } else if(randomInt == 2) {
-            Demo.a1 = new Elephant();
-        } else {
-            Demo.a1 = new Lion();
-        }
 
 //        At complile time function search starts from data type of variable
 
@@ -42,9 +49,9 @@ public class Demo {
 //            System.out.println("Cat is there");
 //        }
 
-        Animal xyz = new Cat();
-
-        xyz.talk();
+//        Animal xyz = new Cat();
+//
+//        xyz.talk();
     }
 
     public static void doubleTap() {
