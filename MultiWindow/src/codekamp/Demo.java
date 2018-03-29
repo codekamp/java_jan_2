@@ -11,14 +11,13 @@ public class Demo implements ActionListener {
     public JButton b1;
 
     public static void main(String[] args) {
-
         Demo.createNewWindow();
     }
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        if(e.getSource() == this.b1) {
-            if(this.l1.getForeground() == Color.RED) {
+        if (e.getSource() == this.b1) {
+            if (this.l1.getForeground() == Color.RED) {
                 this.l1.setForeground(Color.GREEN);
             } else {
                 this.l1.setForeground(Color.RED);
@@ -30,7 +29,7 @@ public class Demo implements ActionListener {
 
     private static void createNewWindow() {
         JFrame f1 = new JFrame();
-        JPanel p1 =new JPanel();
+        JPanel p1 = new JPanel();
 
         f1.setSize(500, 400);
 
@@ -46,9 +45,7 @@ public class Demo implements ActionListener {
         d1.b1.addActionListener(d1);
         b2.addActionListener(d1);
 
-
         f1.add(p1);
-
         f1.setVisible(true);
     }
 }
