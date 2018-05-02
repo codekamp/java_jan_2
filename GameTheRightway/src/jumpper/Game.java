@@ -4,15 +4,19 @@ import javax.swing.*;
 
 public class Game {
 
+    public String title;
+
     public static final int width = 800;
     public static final int height = 450;
+
+    public static GamePanel panel;
 
     public static void main(String[] args) {
         JFrame frame = new JFrame();
 
-        GamePanel panel = new GamePanel();
+        Game.panel = new GamePanel();
 
-        frame.add(panel);
+        frame.add(Game.panel);
         frame.pack();
         frame.setVisible(true);
     }
