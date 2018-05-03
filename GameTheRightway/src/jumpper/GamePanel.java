@@ -2,7 +2,6 @@ package jumpper;
 
 
 import jumpper.screens.Screen;
-import jumpper.screens.StageOneScreen;
 import jumpper.screens.WelcomeScreen;
 
 import javax.swing.*;
@@ -17,7 +16,7 @@ public class GamePanel extends JPanel implements Runnable, MouseListener, KeyLis
     private Screen currentScreen;
 
     public GamePanel() {
-        this.setPreferredSize(new Dimension(Game.width, Game.height));
+        this.setPreferredSize(new Dimension(Game.WIDTH, Game.HEIGHT));
         this.setFocusable(true);
         this.addMouseListener(this);
         this.addKeyListener(this);
@@ -27,7 +26,7 @@ public class GamePanel extends JPanel implements Runnable, MouseListener, KeyLis
     public void addNotify() {
         super.addNotify();
 
-
+        Resources.load();
         this.currentScreen = new WelcomeScreen();
         Thread t = new Thread(this);
         t.start();
@@ -46,7 +45,7 @@ public class GamePanel extends JPanel implements Runnable, MouseListener, KeyLis
             // draw
 
             Graphics g = this.getGraphics();
-            g.clearRect(0, 0, Game.width, Game.height);
+            g.clearRect(0, 0, Game.WIDTH, Game.HEIGHT);
             this.currentScreen.update();
             this.currentScreen.draw(g);
             g.dispose();

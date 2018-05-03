@@ -6,8 +6,8 @@ public class Game {
 
     public String title;
 
-    public static final int width = 800;
-    public static final int height = 450;
+    public static final int WIDTH = 800;
+    public static final int HEIGHT = 450;
 
     public static GamePanel panel;
 
