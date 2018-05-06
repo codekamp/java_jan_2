@@ -12,7 +12,9 @@ abstract public class Entity {
     private int width;
     private int height;
     private Image image;
-    private boolean visible;
+    private boolean visible = true;
+
+//    private Rectangle rect = new Rectangle();
 
     public Entity(int x, int y, int width, int height) {
         this.x = x;
@@ -34,6 +36,22 @@ abstract public class Entity {
 
     public void setX(int x) {
         this.x = x;
+    }
+
+    public void increaseX(int delta) {
+        this.x += delta;
+    }
+
+    public void increaseY(int delta) {
+        this.y += delta;
+    }
+
+    public void descreaseX(int delta) {
+        this.x -= delta;
+    }
+
+    public void descreaseY(int delta) {
+        this.y -= delta;
     }
 
     public int getY() {
@@ -113,4 +131,15 @@ abstract public class Entity {
                 && ((x >= e.x && x <= e.x + e.width) || (e.x >= x && e.x <= x + width))
                 && ((y >= e.y && y <= e.y + e.height) || (e.y >= y && e.y <= y + height));
     }
+
+//    public boolean isCollidingWith(Entity e) {
+//        this.updateRect();
+//        e.updateRect();
+//
+//        return visible && e.visible && this.rect.intersects(e.rect);
+//    }
+//
+//    private void updateRect() {
+//        this.rect.setBounds(this.x, this.y, this.width, this.height);
+//    }
 }
