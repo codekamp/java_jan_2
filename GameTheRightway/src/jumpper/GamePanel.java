@@ -10,6 +10,7 @@ import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
+import java.awt.image.BufferedImage;
 
 public class GamePanel extends JPanel implements Runnable, MouseListener, KeyListener {
 
@@ -34,6 +35,8 @@ public class GamePanel extends JPanel implements Runnable, MouseListener, KeyLis
 
     @Override
     public void run() {
+        Image bigImage = new BufferedImage(Game.WIDTH, Game.HEIGHT, BufferedImage.TYPE_INT_RGB);
+
         while (true) {
             try {
                 Thread.sleep(30);
@@ -44,11 +47,16 @@ public class GamePanel extends JPanel implements Runnable, MouseListener, KeyLis
             // update
             // draw
 
-            Graphics g = this.getGraphics();
-            g.clearRect(0, 0, Game.WIDTH, Game.HEIGHT);
+            Graphics panelGraphics = this.getGraphics();
+            Graphics imageGrahics = bigImage.getGraphics();
+
+            imageGrahics.clearRect(0, 0, Game.WIDTH, Game.HEIGHT);
             this.currentScreen.update();
-            this.currentScreen.draw(g);
-            g.dispose();
+            this.currentScreen.draw(imageGrahics);
+
+            panelGraphics.drawImage(bigImage, 0, 0, null);
+            imageGrahics.dispose();
+            panelGraphics.dispose();
         }
     }
 

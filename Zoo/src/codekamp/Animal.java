@@ -1,6 +1,13 @@
 package codekamp;
 
-public class Animal {
+import java.util.Iterator;
+
+public class Animal implements Iterable<String> {
+
+    public String name;
+    public String breed;
+    public String color;
+    public String hobby;
 
     public Animal() {
         System.out.println("Animal Class kaa Constructor");
@@ -26,5 +33,10 @@ public class Animal {
 
     public void walkLeft() {
         System.out.println("walking to left");
+    }
+
+    @Override
+    public Iterator<String> iterator() {
+        return new AnimalIterator(this);
     }
 }

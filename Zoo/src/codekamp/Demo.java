@@ -10,7 +10,13 @@ public class Demo {
 
         Dog d1 = new Dog();
 
-        Cat c1 = new Cat();
+        d1.breed = "Bulldog";
+        d1.name = "Jupitor";
+        d1.color = "green";
+
+        for (String property: d1) {
+            System.out.println(property);
+        }
 
 //        Random r = new Random();
 //        int randomInt = r.nextInt(4);
