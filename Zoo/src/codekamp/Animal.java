@@ -14,6 +14,7 @@ public class Animal implements Iterable<String> {
     }
 
     public Animal(int a) {
+        super();
         System.out.println("Animal Class kaa Constructor");
     }
 

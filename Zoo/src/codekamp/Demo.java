@@ -67,4 +67,9 @@ public class Demo {
     public static void swipeUp() {
         Demo.a1.doFavoriteThing();
     }
+
+    // git
+    // Design patterns (Derek Banas) Youtube.
+    // Data Structures.
+    // which technology?
 }

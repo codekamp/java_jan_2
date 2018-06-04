@@ -2,6 +2,19 @@ package codekamp;
 
 public class Dog extends Animal {
 
+    // First line is every constructor should be call to a parent constructor
+    // directly or indirectly.
+
+    public Dog() {
+        this("adfadfaf");
+        System.out.println("hello");
+    }
+
+    public Dog(String a) {
+        super(30);
+        System.out.println("sdfdsfdsf");
+    }
+
     public void talk() {
         System.out.println("Wuff Wuff!");
     }
